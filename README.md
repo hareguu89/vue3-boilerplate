@@ -2,4 +2,5 @@
 
 To run the app - $ npm run serve
 
-- upload initial settings < 03/19/2022 > 
+- Upload initial settings < 03/19/2022 > 
+- Upload vite-svg-loader < 03/21/2022 >
