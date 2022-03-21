@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
 
+const state = reactive({
+    testText: 'test',
+})
 const count = ref(0)
 </script>
 
 <template>
-    <h1 class="message">{{ count }}</h1>
-    <div>이것이 홈!</div>
+    <div>helllllllllllllllllllllllo</div>
 </template>
 
 <style scoped>

@@ -4,6 +4,7 @@ module.exports = {
         browser: true,
         es2021: true,
         node: true,
+        'vue/setup-compiler-macros': true,
     },
     extends: [
         'plugin:vue/vue3-recommended',
@@ -20,5 +21,10 @@ module.exports = {
         'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
         'prettier/prettier': 'error',
+    },
+    globals: {
+        defineProps: 'readonly',
+        defineEmits: 'readonly',
+        defineExpose: 'readonly',
     },
 }
