@@ -1,14 +1,9 @@
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
-
-const state = reactive({
-    testText: 'test',
-})
-const count = ref(0)
+import AIcon from '@/components/atoms/aIcon.vue'
 </script>
 
 <template>
-    <div>helllllllllllllllllllllllo</div>
+    <a-icon name="Spinner" />
 </template>
 
 <style scoped>
