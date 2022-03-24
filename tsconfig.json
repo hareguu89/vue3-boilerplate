@@ -23,10 +23,20 @@
       "scripthost"
     ],
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/router/index.ts"],
+  "include": [
+    "src/**/*.ts", 
+    "src/**/*.d.ts", 
+    "src/**/*.tsx", 
+    "src/**/*.vue", 
+    "src/router/index.ts",
+  ],
   "exclude": [
     "node_modules",
     "**/*.stories.ts",
   ],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [
+    { 
+      "path": "./tsconfig.node.json" 
+    },
+  ],
 }
