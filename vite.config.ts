@@ -23,7 +23,6 @@ export default defineConfig({
             scss: {
                 additionalData: `@import './src/assets/scss/index.scss';`,
             },
-            sass: { prependData: `@import './src/assets/scss/index.scss';` },
         },
     },
 })
