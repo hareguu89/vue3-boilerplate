@@ -1,6 +1,10 @@
 <template>
     <div class="flex justify-center items-center">
-        <component :is="computedName" :class="computedClasses" />
+        <component
+            :is="computedName"
+            :class="computedClasses"
+            @click="$emit('click')"
+        />
     </div>
 </template>
 
@@ -142,6 +146,7 @@ export default {
             default: false,
         },
     },
+    emits: ['click'],
     setup(props: IconProps) {
         const computedClasses = computed((): string[] => {
             const isInclude = ['Search', 'Refresh', 'LeftArrow'].includes(

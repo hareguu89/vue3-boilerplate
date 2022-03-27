@@ -1,51 +1,94 @@
 import AIcon from './aIcon.vue'
 
+/* argTypes는 컴포넌트에 필요한 인수와 타입을 작성하는 것이다. 여기서 text 혹은 size 같이 글자로 작성해야하는 타입 혹은 다른 타입을 control키에서 변경이 가능하다. */
 export default {
     title: 'AIcon',
     component: AIcon,
-    // More on argTypes: https://storybook.js.org/docs/vue/api/argtypes
     argTypes: {
-        size: {
+        name: {
+            options: [
+                'Box',
+                'PolyBag',
+                'LnbSimply',
+                'LnbFold',
+                'GlobalTabItemAdd',
+                'GlobalTabItemClose',
+                'LogoGroup',
+                'Receiving',
+                'Shipping',
+                'Return',
+                'Stock',
+                'Report',
+                'Mdm',
+                'Manual',
+                'ko',
+                'en',
+                'cn',
+                'ChevronDownUser',
+                'Logo',
+                'YesbeeText',
+                'Hamburger',
+                'Add',
+                'AddItem',
+                'ChevronDownSearchBox',
+                'SeperatorDark',
+                'Seperator',
+                'Spinner',
+                'Delete',
+                'DeleteDisabled',
+                'ChevronDownDisabled',
+                'ChevronDown',
+                'Search',
+                'Barcode',
+                'Print',
+                'Calendar',
+                'Download',
+                'Order',
+                'Refresh',
+                'Cargo',
+                'Won',
+                'Dollar',
+                'Yuan',
+                'Percent',
+                'Plus',
+                'Warn',
+                'Tooltip',
+                'LeftArrow',
+                'RadioOn',
+                'RadioOff',
+                'CheckOn',
+                'CheckOff',
+                'Pdf',
+                'Excel',
+                'AscArrow',
+                'DescArrow',
+                'AddBlue',
+                'Ea',
+            ],
             control: { type: 'select' },
-            options: ['small', 'medium', 'large'],
+        },
+        disabled: {
+            controls: { type: 'radio' },
         },
     },
 }
 
-// More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
 const Template = (args) => ({
     // Components used in your story `template` are defined in the `components` object
     components: { AIcon },
-    // The story's `args` need to be mapped into the template through the `setup()` method
     setup() {
-        console.log(args)
-        return { args }
+        const clickEvent = () => {
+            console.log('clicked')
+        }
+        return { args, clickEvent }
     },
-    // And then the `args` are bound to your component with `v-bind="args"`
-    template: '<a-icon :name="args.name" :disalbed="args.diabled" />',
+    template:
+        '<a-icon :name="args.name" :disalbed="args.diabled" @click="clickEvent" />',
 })
 
 export const Primary = Template.bind({})
 
-// More on args: https://storybook.js.org/docs/vue/writing-stories/args
 Primary.args = {
-    primary: true,
     name: 'Spinner',
+    disabled: false,
 }
-
-// export const Secondary = Template.bind({})
-// Secondary.args = {
-//     label: 'Button',
-// }
-
-// export const Large = Template.bind({})
-// Large.args = {
-//     size: 'large',
-//     label: 'Button',
-// }
-
-// export const Small = Template.bind({})
-// Small.args = {
-//     size: 'small',
-//     label: 'Button',
-// }
