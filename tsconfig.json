@@ -11,6 +11,8 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "isolatedModules": true,
+    "useDefineForClassFields": true,
     "paths": {
       "/@/*": [ // / to begin with.
         "src/*"
@@ -22,6 +24,9 @@
       "dom.iterable",
       "scripthost"
     ],
+    "types": [
+      "vite/client",
+    ]
   },
   "include": [
     "src/**/*.ts", 

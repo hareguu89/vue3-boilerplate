@@ -1,9 +1,11 @@
 import AAddButton from './aAddButton.vue'
 
 export default {
-    title: 'AAddButton',
+    title: 'atoms/AAddButton',
     component: AAddButton,
-    argTypes: {},
+    argTypes: {
+        label: '',
+    },
 }
 
 const Template = (args) => ({
@@ -11,9 +13,11 @@ const Template = (args) => ({
     setup() {
         return { args }
     },
-    template: '<a-add-button />',
+    template: '<a-add-button :label="args.label" />',
 })
 
-export const Primary = Template.bind({})
+export const Default = Template.bind({})
 
-Primary.args = {}
+Default.args = {
+    label: '상품 추가',
+}

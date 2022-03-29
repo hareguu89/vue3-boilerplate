@@ -1,16 +1,4 @@
-<template>
-    <button
-        :class="state.computedClasses"
-        :disabled="props.disabled"
-        type="button"
-        @click="$emit('add-click')"
-    >
-        <div class="label">{{ props.label }}</div>
-        <a-icon name="Add-item" />
-    </button>
-</template>
-
-<script lang="ts" setup>
+<script setup lang="ts">
 import aIcon from './aIcon.vue'
 import { computed, reactive } from 'vue'
 
@@ -33,6 +21,18 @@ const state = reactive({
     }),
 })
 </script>
+
+<template>
+    <button
+        :class="state.computedClasses"
+        :disabled="props.disabled"
+        type="button"
+        @click="$emit('add-click')"
+    >
+        <div class="label">{{ props.label }}</div>
+        <a-icon name="Add-item" />
+    </button>
+</template>
 
 <style lang="scss" scoped>
 .button {
