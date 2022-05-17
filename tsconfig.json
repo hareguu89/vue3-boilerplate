@@ -13,6 +13,7 @@
     "baseUrl": ".",
     "isolatedModules": true,
     "useDefineForClassFields": true,
+    "noImplicitAny": true,
     "paths": {
       "/@/*": [ // / to begin with.
         "src/*"
