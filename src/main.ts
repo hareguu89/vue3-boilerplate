@@ -7,7 +7,9 @@ import clickOutside from './types/click-outside'
 import { worker } from './mocks/browser.js'
 
 if (process.env.NODE_ENV === 'development') {
-    worker.start()
+    worker.start({
+        onUnhandledRequest: 'bypass',
+    })
     console.warn('MSW started!')
 }
 

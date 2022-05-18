@@ -7,18 +7,17 @@ import { fetchMessage } from '../services/fetchers'
 
 interface Istate {
     isVisible: boolean
-    message: string | Promise<AxiosResponse<string>>
+    message: AxiosResponse<string> | null
 }
 
-const state = reactive<Istate>({ isVisible: false, message: '' })
+const state = reactive<Istate>({ isVisible: false, message: null })
 const baseModal = ref<InstanceType<typeof ABaseModal> | null>(null)
 
 const test = (): void => {
-    // baseModal.value.open()
     state.isVisible = !state.isVisible
 }
 onMounted(async () => {
-    let data: string = await fetchMessage()
+    let data = await fetchMessage()
     state.message = data
 })
 </script>
